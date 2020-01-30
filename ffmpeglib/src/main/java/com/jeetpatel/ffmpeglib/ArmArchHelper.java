@@ -1,5 +1,5 @@
 package com.jeetpatel.ffmpeglib;/*
-package com.github.kohiyadav.libffmpeg;
+package com.jeetpatel.ffmpeglib;
 
 class ArmArchHelper {
     static {
