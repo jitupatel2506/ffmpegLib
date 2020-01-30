@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: "com.jfrog.bintray"
 
 // This is the library version used when deploying the artifact
 version = '1.0'
@@ -97,31 +96,3 @@ artifacts {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-// https://github.com/bintray/gradle-bintray-plugin
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        // it is the name that appears in bintray when logged
-        name = "ffmpeg-android"
-        websiteUrl = "https://github.com/writingminds/ffmpeg-android-java"
-        vcsUrl = "https://github.com/writingminds/ffmpeg-android-java.git"
-        licenses = ["GPL-3.0"]
-        publish = true
-        version {
-            gpg {
-                sign = true
-                passphrase = properties.getProperty("bintray.gpg.password")
-            }
-            mavenCentralSync {
-                sync = true
-                user = properties.getProperty("bintray.oss.user") //OSS user token
-                password = properties.getProperty("bintray.oss.password") //OSS user password
-                close = '1'
-            }
-        }
-    }
-}
