@@ -13,5 +13,5 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.jitupatel2506:ffmpegLib:Tag'
+	        implementation 'com.github.jitupatel2506:ffmpegLib:1.0.0'
 	}
